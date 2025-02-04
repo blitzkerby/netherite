@@ -11,32 +11,34 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
     return (
-        <Drawer className="update-drawer" anchor="left" open={open} onClose={onClose}>
-            <Toolbar>
-                <Typography variant="h6" noWrap>
-                    Sidebar
-                </Typography>
-            </Toolbar>
-            <List>
-                <ListItem button>
-                    <ListItemIcon>
-                        <Home />
-                    </ListItemIcon>
-                    <ListItemText primary="Home" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <Settings />
-                    </ListItemIcon>
-                    <ListItemText primary="Settings" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <Info />
-                    </ListItemIcon>
-                    <ListItemText primary="About" />
-                </ListItem>
-            </List>
+        <Drawer anchor="left" open={open} onClose={onClose}>
+            <div className="update-drawer-container">
+                <Toolbar className="update-toolbar">
+                    <Typography variant="h6" noWrap>
+                        Sidebar
+                    </Typography>
+                </Toolbar>
+                <List className="update-list">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Home />
+                        </ListItemIcon>
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Settings />
+                        </ListItemIcon>
+                        <ListItemText primary="Settings" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Info />
+                        </ListItemIcon>
+                        <ListItemText primary="About" />
+                    </ListItem>
+                </List>
+            </div>
         </Drawer>
     );
 };

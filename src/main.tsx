@@ -13,12 +13,14 @@ import { ThemeProvider } from '@emotion/react'
 import { CssBaseline } from '@mui/material'
 
 import theme from './theme'
+import GlobalStyles from './GlobalStyles'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <CssBaseline />
+            {/* <GlobalStyles /> */}
             <App />
         </ThemeProvider>
     </React.StrictMode>,

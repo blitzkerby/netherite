@@ -52,3 +52,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.update-appbar-container{
+    background-color: #888;
+}

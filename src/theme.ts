@@ -1,35 +1,47 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
-// Define your custom theme
 const theme = createTheme({
     palette: {
+        mode: 'light', // or 'dark' for dark mode
         primary: {
-            main: "#1976d2", // Blue
+            main: 'hsl(0, 70%, 50%)',
+            contrastText: 'hsl(0, 0%, 98%)',
         },
         secondary: {
-            main: "#f50057", // Pink
+            main: 'hsl(0, 50%, 30%)',
+            contrastText: 'hsl(0, 0%, 98%)',
+        },
+        error: {
+            main: 'hsl(0, 80%, 50%)',
+            contrastText: 'hsl(0, 0%, 98%)',
         },
         background: {
-            default: "#f4f4f4",
-            paper: "#ffffff",
+            default: 'hsl(0, 10%, 10%)',
+            paper: 'hsl(0, 10%, 15%)',
+        },
+        text: {
+            primary: 'hsl(0, 0%, 98%)',
+            secondary: 'hsl(0, 0%, 80%)',
         },
     },
+    shape: {
+        borderRadius: 8, // Customize border radius
+    },
     typography: {
-        fontFamily: "'Roboto', sans-serif",
-        h1: {
-            fontSize: "2.5rem",
-            fontWeight: 700,
-        },
-        body1: {
-            fontSize: "1rem",
-        },
+        fontFamily: 'Roboto, Arial, sans-serif', // Customize font family
     },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: "8px",
-                    textTransform: "none", // Prevents uppercase transformation
+                    '&.MuiOutlinedButton-root': {
+                        borderColor: 'hsl(0, 30%, 25%)',
+                    },
+                    '&:hover': {
+                        backgroundColor: 'hsl(0, 60%, 40%)',
+                        color: 'hsl(0, 0%, 98%)',
+                    },
+                    borderRadius: '0.5rem',
                 },
             },
         },

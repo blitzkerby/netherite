@@ -4,6 +4,8 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import Sidebar from '@/components/update/Sidebar'; // Adjust the import path as necessary
 import FileGrid from '@/components/update/FileGrid/FileGrid';
 
+import "./App.css"
+
 const App: React.FC = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -17,13 +19,13 @@ const App: React.FC = () => {
 
     return (
         <div>
-            <AppBar position="fixed">
-                <Toolbar>
+            <AppBar>
+                <Toolbar className="update-appbar-container">
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleSidebarOpen}>
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Stone
+                        Netherite
                     </Typography>
                 </Toolbar>
             </AppBar>
