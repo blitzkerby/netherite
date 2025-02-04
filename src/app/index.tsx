@@ -1,39 +1,36 @@
-import { useState } from 'react'
-import UpdateElectron from '@/components/update'
-import logoVite from '../assets/logo-vite.svg'
-import logoElectron from '../assets/logo-electron.svg'
-import './App.css'
-import Sidebar from '@/components/update/Sidebar'
+import React, { useState } from 'react';
+import { CssBaseline, AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
+import { Menu as MenuIcon } from '@mui/icons-material';
+import Sidebar from '@/components/update/Sidebar'; // Adjust the import path as necessary
 
-function App() {
-    const [count, setCount] = useState(0)
+const App: React.FC = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const handleSidebarOpen = () => {
+        setSidebarOpen(true);
+    };
+
+    const handleSidebarClose = () => {
+        setSidebarOpen(false);
+    };
+
     return (
-        <div className='App'>
-            <div className='logo-box'>
-                <a href='https://github.com/electron-vite/electron-vite-react' target='_blank'>
-                    <img src={logoVite} className='logo vite' alt='Electron + Vite logo' />
-                    <img src={logoElectron} className='logo electron' alt='Electron + Vite logo' />
-                </a>
-            </div>
-            <h1>Electron + Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>
-                Click on the Electron + Vite logo to learn more
-            </p>
-            <div className='flex-center'>
-                Place static files into the<code>/public</code> folder <img style={{ width: '5em' }} src='./node.svg' alt='Node logo' />
-            </div>
-
-            <UpdateElectron />
+        <div>
+            <AppBar position="fixed">
+                <Toolbar>
+                    <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleSidebarOpen}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" noWrap>
+                        My App
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Sidebar open={sidebarOpen} onClose={handleSidebarClose} />
+            <main style={{ padding: '16px', marginTop: '64px' }}>
+            </main>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;
