@@ -8,10 +8,20 @@ import './demos/ipc'
 // If you want use Node.js, the`nodeIntegration` needs to be enabled in the Main process.
 // import './demos/node'
 
+
+import { ThemeProvider } from '@emotion/react'
+import { CssBaseline } from '@mui/material'
+
+import theme from './theme'
+
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <App />
+        </ThemeProvider>
+    </React.StrictMode>,
 )
 
 postMessage({ payload: 'removeLoading' }, '*')

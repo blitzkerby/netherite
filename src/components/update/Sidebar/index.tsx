@@ -1,4 +1,6 @@
 import React from 'react';
+import "./sidebar.css"
+
 import { List, ListItem, ListItemIcon, ListItemText, Drawer, Toolbar, Typography } from '@mui/material';
 import { Home, Settings, Info } from '@mui/icons-material';
 
@@ -9,7 +11,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
     return (
-        <Drawer anchor="left" open={open} onClose={onClose}>
+        <Drawer className="update-drawer" anchor="left" open={open} onClose={onClose}>
             <Toolbar>
                 <Typography variant="h6" noWrap>
                     Sidebar
